@@ -1,4 +1,4 @@
-Simple 2D batch renderer example using PyOpenGL and pygame See 'pygame-main.py' for details.
+Simple 2D batch renderer example using PyOpenGL and pygame. See 'pygame-main.py' for details.
 
 The `Batch` class creates two VBOs: one for quad vertices and texture coordinates, and one for indices.
 
@@ -29,6 +29,10 @@ renderer.end()
 ```
 
 Cleanup: `gltexture.delete()` and `batch.delete()` will delete a texture and batch VBOs, respectively.
+
+# Dependencies
+
+`batch.py` depends on [PyOpenGL](http://pyopengl.sourceforge.net/) and [NumPy](http://www.numpy.org/). `pygame-main.py` depends on [Pygame](https://www.pygame.org/), but Pygame is not a requirement for using the batch itself.
 
 # License
 
