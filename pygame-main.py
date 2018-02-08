@@ -104,11 +104,11 @@ if __name__ == '__main__':
         GL.glClear(GL.GL_COLOR_BUFFER_BIT)
         
         renderer.begin()
-        for i in range(2000):
+        for i in range(710):
             renderer.draw(
                 animation[int(imageIndex)],
-                10 + 20 * i % 300,
-                10 + 20 * int(i / 300)
+                10 + (20 * i) % 300,
+                10 + 20 * int(20 * i / 300)
             )
         renderer.end()
 
@@ -120,7 +120,7 @@ if __name__ == '__main__':
 
         pg.display.flip()
 
-        clock.tick()
+        clock.tick(0)
         pg.display.set_caption('FPS: ' + str(clock.get_fps()))
 
     renderer.delete()

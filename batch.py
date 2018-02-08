@@ -52,7 +52,7 @@ def setup_shaders(vpMatrix):
     )
     GL.glUniform1i(texUniform, 0)
     
-    # TODO: cleanup (delete shader)
+    # TODO: cleanup (delete shaders)
 
 class GLTexture:
     def __init__(self, textureId, width, height):
@@ -193,18 +193,18 @@ class Batch:
             4 * self.vboData.itemsize,
             ctypes.c_void_p(0)
         )
-        GL.glBufferData(
+        GL.glBufferSubData(
             GL.GL_ARRAY_BUFFER,
+            0,
+            16 * self.objectIndex * self.vboData.itemsize,
             self.vboData,
-            GL.GL_DYNAMIC_DRAW
         )
         GL.glDrawElements(
             GL.GL_TRIANGLES,
-            self.vboIndexData.size,
+            6 * self.objectIndex,
             GL.GL_UNSIGNED_SHORT,
             ctypes.c_void_p(0),
         )
-        self.vboData.fill(0)
         self.objectIndex = 0
 
     def delete(self):
